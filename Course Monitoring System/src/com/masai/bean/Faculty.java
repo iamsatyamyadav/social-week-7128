@@ -28,6 +28,10 @@ public class Faculty {
 		this.password = password;
 	}
 
+	public Faculty() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getFacultyId() {
 		return facultyId;
 	}

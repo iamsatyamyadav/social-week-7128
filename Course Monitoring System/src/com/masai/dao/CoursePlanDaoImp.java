@@ -11,7 +11,7 @@ import com.masai.bean.CoursePlan;
 import com.masai.exceptions.CoursePlanException;
 import com.masai.utility.DBUtill;
 
-public class CoursePlanDaoImp implements coursePlanDao {
+public class CoursePlanDaoImp implements CoursePlanDao {
 
 	@Override
 	public boolean getBatchByBatchId(int id) throws CoursePlanException {

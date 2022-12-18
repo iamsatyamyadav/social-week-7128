@@ -5,7 +5,7 @@ import java.util.List;
 import com.masai.bean.CoursePlan;
 import com.masai.exceptions.CoursePlanException;
 
-public interface coursePlanDao {
+public interface CoursePlanDao {
 
 	public boolean getBatchByBatchId(int id) throws CoursePlanException;
 
