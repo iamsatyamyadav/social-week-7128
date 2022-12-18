@@ -1,0 +1,151 @@
+The table Name CMS this is short form of course monitring system.
+
+>create database CMS;
+
+>use database CMS;
+
+
+create a table name by admin
+
+Create table admin(
+usename varchar(20) not null unique,
+password varchar(20) not null
+);
+
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| usename  | varchar(20) | NO   | PRI | NULL    |       |
+| password | varchar(20) | NO   |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+
+Create table faculty(
+facultyid int primary key auto_increment,
+facultyname varchar(20),
+facultyaddress varchar(20),
+mobile varchar(10),
+email varchar(20),
+username varchar(20) not null unique,
+password varchar(20) not null
+);
+
+
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| facultyid      | int         | NO   | PRI | NULL    | auto_increment |
+| facultyname    | varchar(20) | YES  |     | NULL    |                |
+| facultyaddress | varchar(20) | YES  |     | NULL    |                |
+| mobile         | varchar(10) | YES  |     | NULL    |                |
+| email          | varchar(20) | YES  |     | NULL    |                |
+| username       | varchar(20) | NO   | UNI | NULL    |                |
+| password       | varchar(20) | NO   |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+
+create table course(
+courseid int primary key auto_increment,
+courseName varchar(20) unique,
+fee int,
+courseDescription varchar(50)
+);
+
+
++-------------------+-------------+------+-----+---------+----------------+
+| Field             | Type        | Null | Key | Default | Extra          |
++-------------------+-------------+------+-----+---------+----------------+
+| courseid          | int         | NO   | PRI | NULL    | auto_increment |
+| courseName        | varchar(20) | YES  | UNI | NULL    |                |
+| fee               | int         | YES  |     | NULL    |                |
+| courseDescription | varchar(50) | YES  |     | NULL    |                |
++-------------------+-------------+------+-----+---------+----------------+
+
+
+Create table batch(
+batchId int primary key auto_increment,
+courseId int not null,
+facultyId int not null,
+numberOfStudents int,
+batchStartDate date,
+duration varchar(20),
+foreign key(courseId) references course(courseId) on delete cascade,
+foreign key(facultyId) references faculty(facultyId) on delete cascade
+);
+
+
++------------------+-------------+------+-----+---------+----------------+
+| Field            | Type        | Null | Key | Default | Extra          |
++------------------+-------------+------+-----+---------+----------------+
+| batchId          | int         | NO   | PRI | NULL    | auto_increment |
+| courseId         | int         | NO   | MUL | NULL    |                |
+| facultyId        | int         | NO   | MUL | NULL    |                |
+| numberOfStudents | int         | YES  |     | NULL    |                |
+| batchStartDate   | date        | YES  |     | NULL    |                |
+| duration         | varchar(20) | YES  |     | NULL    |                |
++------------------+-------------+------+-----+---------+----------------+
+
+
+
+
+
+
+create table coursPlan
+    (
+     planId int primary key auto_increment,
+     batchId int not null,
+     daynumber int,
+     topic varchar(100),
+     status varchar(100),
+     foreign key(batchId) references batch(batchId) on delete cascade
+     );
+
+
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| planId    | int          | NO   | PRI | NULL    | auto_increment |
+| batchId   | int          | NO   | MUL | NULL    |                |
+| daynumber | int          | YES  |     | NULL    |                |
+| topic     | varchar(100) | YES  |     | NULL    |                |
+| status    | varchar(100) | YES  |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
