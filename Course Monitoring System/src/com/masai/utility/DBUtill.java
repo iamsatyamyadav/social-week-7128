@@ -19,7 +19,7 @@ public class DBUtill {
 		String url = "jdbc:mysql://localhost:3306/CMS";
 		
 		try {
-			DriverManager.getConnection(url, "root", "8770");
+		cn=	DriverManager.getConnection(url, "root", "8770");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
