@@ -19,7 +19,8 @@ MySQL
 Aouther :- Satyam Yadav
 
 
-This project for monitor for any coures.
+This project for monitor for any coures. given by masai school.
+
 
 
 ## 🤝 Thanks for taking the time to view our project! We hope that you found it interesting and informative.
